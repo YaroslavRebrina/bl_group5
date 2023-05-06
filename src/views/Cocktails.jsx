@@ -10,7 +10,7 @@ export const Cocktails = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [cocktails, setCocktails] = useState(null);
   const queryParam = searchParams.get("query");
-  console.log(queryParam);
+  //console.log(queryParam);
   const onFormSubmit = (query) => {
     setSearchParams({ query: query.trim() });
   };
@@ -18,7 +18,6 @@ export const Cocktails = () => {
     if (queryParam) {
       searchByName(queryParam)
         .then((response) => {
-          //console.log(response);
           setCocktails(response.drinks);
         })
         .catch((error) => console.log(error.message));
