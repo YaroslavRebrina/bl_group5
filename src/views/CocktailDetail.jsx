@@ -10,14 +10,14 @@ import { getCocktailDetail } from "../api/cocktail-service";
 export const CocktailDetail = () => {
   const location = useLocation();
   const path = location?.state?.from ?? routes.HOME;
-
+  
   const [cocktailInfo, setCocktailInfo] = useState(null);
   const { cocktailId } = useParams();
 
   useEffect(() => {
     getCocktailDetail(cocktailId).then(setCocktailInfo).catch(console.log);
   }, [cocktailId]);
-  console.log(`cocktail detail : `, location);
+
   return (
     <>
       <h1 className="uppercase text-4xl text-gray-600 text-center">

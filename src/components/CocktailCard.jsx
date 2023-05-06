@@ -12,7 +12,6 @@ export const CocktailCard = ({
   const currentPage =
     location.pathname === routes.HOME ? routes.COCKTAILS : location.pathname;
 
-  console.log(`cocktail card : `, location);
   return (
     <li className="text-center border rounded-xl overflow-hidden shadow-md border-transparent hover:border-gray-300 cursor-pointer transition-colors">
       <Link to={`${currentPage}/${idDrink}`} state={{ from: location }}>
